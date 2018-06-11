@@ -21,7 +21,6 @@ Maxbotix::Maxbotix(const byte &i2cAddress, bool pullup)
         pinMode(SCL, INPUT_PULLUP);
     }
 
-    m_i2c = Wire;
     m_i2c.begin();
 }
 
