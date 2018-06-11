@@ -10,7 +10,7 @@
 |
 */
 
-#include    "Maxbotix.h"
+#include    <Maxbotix.h>
 
 int         range;
 Maxbotix    sonar;
@@ -30,24 +30,6 @@ void    setup()
 
 void    loop()
 {
-    Serial.print("Probing: ");
-    range = sonar.probe();
-
-    // Range < 0 means there is an I2C error
-    if (range < 0) {
-        Serial.print("error(");
-        Serial.print(range, DEC);
-        Serial.println(")");
-    } else {
-        Serial.print(range, DEC);
-        Serial.println("cm");
-    }
-
-    delay(2000);
-}
-
-void    scanAddresses(void)
-{
     byte    error = 0;
 
     Serial.println("* Scanning valid addresses:");
@@ -60,7 +42,7 @@ void    scanAddresses(void)
         Serial.print(": ");
 
         Wire.beginTransmission(addr);
-        Wire.write(byte(81));
+        Wire.write(MB_PING_CMD);
         error = Wire.endTransmission();
 
         if (error != 0) {
@@ -74,4 +56,5 @@ void    scanAddresses(void)
     }
 
     Serial.println("* End of Scan\n");
+    while (1);
 }
