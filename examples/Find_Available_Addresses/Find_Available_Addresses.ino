@@ -12,7 +12,6 @@
 
 #include    <Maxbotix_I2C.h>
 
-int         range;
 Maxbotix    sonar;
 
 void    setup()
