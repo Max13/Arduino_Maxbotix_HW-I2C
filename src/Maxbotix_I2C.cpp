@@ -11,7 +11,7 @@
 
 #include <Maxbotix_I2C.h>
 
-static TwoWire  &Maxbotix::m_i2c = Wire;
+TwoWire &Maxbotix::m_i2c = Wire;
 
 Maxbotix::Maxbotix(const byte &i2cAddress, const byte &sonarCmd, bool pullup)
     : m_address(i2cAddress), m_sonarCmd(sonarCmd)
