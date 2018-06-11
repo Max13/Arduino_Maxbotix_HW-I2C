@@ -4,12 +4,12 @@
 |--------------------------------------------------------------------------
 |
 | Author: Adnan RIHAN
-| URL: https://github.com/Max13/Maxbotix
+| URL: https://github.com/Max13/Maxbotix_I2C
 | Licence: CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
 |
 */
 
-#include "Maxbotix.h"
+#include <Maxbotix.h>
 
 static TwoWire  &Maxbotix::m_i2c = Wire;
 
