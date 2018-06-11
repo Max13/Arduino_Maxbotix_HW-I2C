@@ -9,8 +9,8 @@
 |
 */
 
-#ifndef MAXBOTIX_H
-#define MAXBOTIX_H
+#ifndef MAXBOTIX_I2C_H
+#define MAXBOTIX_I2C_H
 
 #include    <Arduino.h>
 #include    <Wire.h>
@@ -45,4 +45,4 @@ class Maxbotix
         static const byte   &findFirstValidAddress(const byte &sonarCmd = MB_PING_CMD);
 };
 
-#endif  // MAXBOTIX_H
+#endif  // MAXBOTIX_I2C_H

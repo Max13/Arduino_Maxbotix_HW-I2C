@@ -10,7 +10,7 @@
 |
 */
 
-#include    <Maxbotix.h>
+#include    <Maxbotix_I2C.h>
 
 int         range;
 Maxbotix    sonar;

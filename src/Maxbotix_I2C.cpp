@@ -9,7 +9,7 @@
 |
 */
 
-#include <Maxbotix.h>
+#include <Maxbotix_I2C.h>
 
 static TwoWire  &Maxbotix::m_i2c = Wire;
 
