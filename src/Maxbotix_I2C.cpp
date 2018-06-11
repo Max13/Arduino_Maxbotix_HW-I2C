@@ -57,11 +57,6 @@ const byte      &Maxbotix::address() const
     return m_address;
 }
 
-const byte      &Maxbotix::sonarCmd() const
-{
-    return m_sonarCmd;
-}
-
 TwoWire         &Maxbotix::i2c()
 {
     return m_i2c;
