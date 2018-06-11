@@ -40,6 +40,10 @@ class Maxbotix
         Maxbotix(const byte &i2cAddress = MB_ADDR, const byte &sonarCmd = MB_PING_CMD, bool pullup = true);
 
         int                 probe();
+
+        const byte          &address() const;
+        const byte          &sonarCmd() const;
+        TwoWire             &i2c();
         unsigned int        lastProbe() const;
 
         static const byte   &findFirstValidAddress(const byte &sonarCmd = MB_PING_CMD);

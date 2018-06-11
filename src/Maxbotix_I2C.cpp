@@ -55,6 +55,21 @@ int             Maxbotix::probe()
     return range;
 }
 
+const byte      &Maxbotix::address() const
+{
+    return m_address;
+}
+
+const byte      &Maxbotix::sonarCmd() const
+{
+    return m_sonarCmd;
+}
+
+TwoWire         &Maxbotix::i2c()
+{
+    return m_i2c;
+}
+
 unsigned int    Maxbotix::lastProbe() const
 {
     return m_lastProbe;
