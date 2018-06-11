@@ -13,8 +13,8 @@
 
 TwoWire &Maxbotix::m_i2c = Wire;
 
-Maxbotix::Maxbotix(const byte &i2cAddress, const byte &sonarCmd, bool pullup)
-    : m_address(i2cAddress), m_sonarCmd(sonarCmd)
+Maxbotix::Maxbotix(const byte &i2cAddress, bool pullup)
+    : m_address(i2cAddress)
 {
     if (pullup) {
         pinMode(SDA, INPUT_PULLUP);
@@ -25,14 +25,14 @@ Maxbotix::Maxbotix(const byte &i2cAddress, const byte &sonarCmd, bool pullup)
     m_i2c.begin();
 }
 
-int             Maxbotix::probe()
+int             Maxbotix::probe(const byte &sonarCmd)
 {
     byte            error = 0;
     unsigned int    range = 0;
 
     // Sends command byte and capture error
     m_i2c.beginTransmission(m_address);
-    m_i2c.write(m_sonarCmd);
+    m_i2c.write(sonarCmd);
     error = m_i2c.endTransmission();
 
     // To differenciate a range from an error
