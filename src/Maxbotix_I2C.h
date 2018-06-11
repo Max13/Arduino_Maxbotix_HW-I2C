@@ -36,7 +36,7 @@ class Maxbotix
         unsigned int    m_lastProbe;
 
     public:
-        Maxbotix(const byte &i2cAddress, bool pullup = true);
+        Maxbotix(const byte &i2cAddress);
 
         int                 probe(const byte &sonarCmd = MB_PING_CMD);
 

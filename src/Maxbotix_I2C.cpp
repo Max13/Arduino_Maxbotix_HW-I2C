@@ -16,10 +16,8 @@ TwoWire &Maxbotix::m_i2c = Wire;
 Maxbotix::Maxbotix(const byte &i2cAddress, bool pullup)
     : m_address(i2cAddress)
 {
-    if (pullup) {
-        pinMode(SDA, INPUT_PULLUP);
-        pinMode(SCL, INPUT_PULLUP);
-    }
+    pinMode(SDA, INPUT_PULLUP);
+    pinMode(SCL, INPUT_PULLUP);
 
     m_i2c.begin();
 }
