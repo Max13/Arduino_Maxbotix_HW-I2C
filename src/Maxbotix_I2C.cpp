@@ -75,12 +75,10 @@ unsigned int    Maxbotix::lastProbe() const
     return m_lastProbe;
 }
 
-const byte      &Maxbotix::findFirstValidAddress(const byte &sonarCmd)
+const byte      &Maxbotix::findFirstValidAddress()
 {
     for (byte cur = 8; cur <= 127; cur += 2) {
         Maxbotix::m_i2c.beginTransmission(cur);
-        Maxbotix::m_i2c.write(sonarCmd);
-
         if (Maxbotix::m_i2c.endTransmission() == 0) {
             return cur;
         }

@@ -46,7 +46,7 @@ class Maxbotix
         TwoWire             &i2c();
         unsigned int        lastProbe() const;
 
-        static const byte   &findFirstValidAddress(const byte &sonarCmd = MB_PING_CMD);
+        static const byte   &findFirstValidAddress();
 };
 
 #endif  // MAXBOTIX_I2C_H
