@@ -22,7 +22,7 @@ void    setup()
     digitalWrite(LED_BUILTIN, LOW);
 #endif
 
-    Serial.begin(57600);
+    Serial.begin(115200);
     while (!Serial);
     Serial.println("Serial ready.\n");
 }
