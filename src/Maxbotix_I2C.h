@@ -37,6 +37,9 @@ class Maxbotix
 
     public:
         Maxbotix(const byte &i2cAddress = MB_ADDR);
+#ifdef  ESP8266
+        Maxbotix(const int sda, const int scl, const byte i2cAddress = MB_ADDR);
+#endif
 
         int                 probe(const byte &sonarCmd = MB_PING_CMD);
 

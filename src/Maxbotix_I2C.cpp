@@ -22,6 +22,17 @@ Maxbotix::Maxbotix(const byte &i2cAddress)
     m_i2c.begin();
 }
 
+#ifdef  ESP8266
+Maxbotix::Maxbotix(const int sda, const int scl, const byte i2cAddress)
+    : m_address(i2cAddress)
+{
+    pinMode(sda, INPUT_PULLUP);
+    pinMode(scl, INPUT_PULLUP);
+
+    m_i2c.begin(sda, scl);
+}
+#endif
+
 int             Maxbotix::probe(const byte &sonarCmd)
 {
     byte            error = 0;
