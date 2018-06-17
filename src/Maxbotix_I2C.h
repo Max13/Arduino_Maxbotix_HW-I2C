@@ -31,12 +31,12 @@
 class Maxbotix
 {
     private:
-        byte            &m_address;
+        const byte      &m_address;
         static TwoWire  &m_i2c;
         unsigned int    m_lastProbe;
 
     public:
-        Maxbotix(const byte &i2cAddress);
+        Maxbotix(const byte &i2cAddress = MB_ADDR);
 
         int                 probe(const byte &sonarCmd = MB_PING_CMD);
 
